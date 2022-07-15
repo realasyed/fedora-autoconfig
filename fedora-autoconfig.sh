@@ -24,6 +24,11 @@ read FASTESTMIRROR
 #Configuration
 echo "Thank you for using my autoconfig! Configuration starting now..."
 
+#Basics
+echo "Dowloading essential GNOME software..."
+yes | sudo dnf install gnome-tweaks
+yes | sudo dnf install gnome-shell-extensions
+
 #Mirror
 if [[ $FASTESTMIRROR == "y" || $FASTESTMIRROR == "Y" ]]; then
 	echo "Editing /etc/dnf/dnf.conf..."
@@ -73,6 +78,9 @@ if [[ $BATTERY == "y" || $BATTERY == "Y" ]]; then
 	yes | sudo dnf install tlp
 	yes | sudo dnf remove power-profiles-daemon
 	sudo systemctl enable tlp.service
+	sudo systemctl mask systemd-rfkill.service
+	sudo systemctl mask systemd-rfkill.socket
+	sudo tlp start
 else
 	echo ""
 fi
