@@ -15,7 +15,7 @@ read NONFREE
 echo "Do you want to use NVidia's proprietary drivers? (y/n)"
 read DRIVERS
 
-echo "Are you on a battery-powered device? (y/n)"
+echo "Does your device have battery problems? (y/n)"
 read BATTERY
 
 echo "Would you like to use the fastest DNF mirror available to you? WARNING: This will edit /etc/dnf/dnf.conf and will slow down DNF the first time you use it with the faster mirrors. (y/n)"
