@@ -27,7 +27,6 @@ echo "Thank you for using my autoconfig! Configuration starting now..."
 #Basics
 echo "Dowloading essential GNOME software..."
 yes | sudo dnf install gnome-tweaks
-yes | sudo dnf install gnome-shell-extensions
 
 #Mirror
 if [[ $FASTESTMIRROR == "y" || $FASTESTMIRROR == "Y" ]]; then
@@ -65,6 +64,7 @@ if [[ $GAMING == "y" || $GAMING == "Y" ]]; then
 	yes | sudo dnf install steam
 	yes | sudo dnf install discord
 	yes | sudo dnf install lutris
+	yes | sudo dnf install bottles
 else
 	echo ""
 fi
